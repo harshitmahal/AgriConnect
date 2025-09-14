@@ -1,0 +1,87 @@
+.img-home {
+    width: 100vw !important;
+    position: absolute !important;
+    height: -webkit-fill-available;
+}
+
+.text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.text-container h2 {
+    position: absolute !important;
+    font-size: 4rem;
+    font-weight: 900;
+    font-family: cursive;
+    margin-bottom: 26rem !important;
+    color: green;
+    text-shadow: 1px 2px 2px lightseagreen;
+}
+
+.text-container p {
+    position: absolute !important;
+    font-size: 1.8rem;
+    font-weight: 900;
+    font-family: cursive;
+    color: white;
+    text-shadow: 0px 2px black;
+}
+
+/* .container{
+    height: 13.5rem;
+} */
+
+.card {
+    min-height: 250px; /* or any fixed height you want */
+  }
+
+.font-reg {
+    color: green;
+    font-family: monospace;
+    font-weight: 800;
+    font-size: 1.3rem;
+}
+
+.btn-reg {
+    background: green;
+    margin-right: 2rem !important;
+}
+
+.btn-reg:hover {
+    background-color: white;
+    color: green;
+    border: 1px solid green;
+}
+
+.text-green {
+    background-color: white;
+    color: green !important;
+    border: 1px solid green;
+    font-size: 1.2rem;
+    border-radius: 0.2rem;
+    padding: 0.5rem;
+}
+
+.text-green:hover {
+    background-color: green;
+    color: white !important;
+    border: 1px solid green;
+    font-size: 1.2rem;
+    border-radius: 0.2rem;
+    padding: 0.5rem;
+}
+
+.btn-2 {
+    margin-right: 0rem !important;
+}
+
+.btn-signin a {
+    color: green !important;
+}
+
+.margin-reg {
+    margin-bottom: 2rem !important;
+}
