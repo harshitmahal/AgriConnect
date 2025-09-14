@@ -24,10 +24,10 @@ app.use(
 
 //s3 creds connected through IAM accesskeys
 const s3 = new S3Client({
-  region: process.env.AWS_REGION,
+  region: "us-east-1",
   credentials: {
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    accessKeyId: "AKIAUO3N424F5DAOFC7T",
+    secretAccessKey: "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",
   },
 });
 
@@ -76,7 +76,7 @@ app.get("/presigned-url", async (req, res) => {
     const key = `uploads/${Date.now()}-${filename}`;
 
     const command = new PutObjectCommand({
-      Bucket: process.env.S3_BUCKET,
+      Bucket: "agriconnect-uploads",
       Key: key,
       ContentType: contentType,
     });
@@ -85,7 +85,7 @@ app.get("/presigned-url", async (req, res) => {
 
     res.json({
       uploadUrl,
-      fileUrl: `https://${process.env.S3_BUCKET}.s3.${process.env.AWS_REGION}.amazonaws.com/${key}`,
+      fileUrl: `https://agriconnect-uploads.s3.us-east-1.amazonaws.com/${key}`,
     });
   } catch (error) {
     console.error("Error generating presigned URL:", error);
