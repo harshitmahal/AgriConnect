@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useParams } from "react-router";
 import "./Store.css";
 import swal from "sweetalert";
+import Navigator from "../Navigator/Navigator";
 
 const StorePaymentScreen = () => {
   const { orderId } = useParams();
@@ -71,6 +72,8 @@ const StorePaymentScreen = () => {
   };
 
   return (
+    <> 
+    <Navigator/>
     <div className="vh-100 store-container d-flex align-items-start justify-content-center">
       {!paid && (
         <div className="store-payment-form mt-4">
@@ -222,6 +225,8 @@ const StorePaymentScreen = () => {
         </div>
       </div>
     </div>
+    </>
+   
   );
 };
 
