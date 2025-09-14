@@ -128,7 +128,9 @@ const StoreAddProductForm = () => {
                   handleImage(e)
                 }}
               />
-              <img src={img} alt="Uploaded Image" />
+              {img &&
+                <img src={img} width="300" height="300" className="mb-3 mt-3" alt="" />
+              }
             </div>
 
             <div className="form-group my-4">
