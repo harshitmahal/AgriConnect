@@ -199,7 +199,7 @@ const StorePaymentScreen = () => {
 
             <div>
               <h5> {order && order._id} </h5>
-              <p> ${order && order.total} </p>
+              <p> ₹{order && order.total} </p>
               <p> 2020/05/20 </p>
               {!paid && (
                 <p className="badge bg-warning text-dark">

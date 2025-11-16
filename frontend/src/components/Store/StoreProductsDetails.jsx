@@ -20,9 +20,9 @@ const StoreProductsDetails = () => {
   return (
     <div className="mx-vw-100 min-vh-100">
       <div className="latest-store-details-cover position-relative">
-        <img src="https://i.ibb.co/rkfrhCm/banner18.webp" alt="" />
+        <img src="https://i.ibb.co/rkfrhCm/banner18.webp" className="w-100" alt="" />
         <div className="store-products-top text-secondary position-absolute top-50 start-50 translate-middle">
-          <p> Home > Products > {product && product.name} </p>
+          <p> {product && product.name} </p>
         </div>
       </div>
       <div className="d-flex">
@@ -37,7 +37,7 @@ const StoreProductsDetails = () => {
                     objectFit: "cover",
                     height: "500px",
                   }}
-                  src={require("../../utils/apples.png")}
+                  src={product?.image}
                   alt=""
                 />
               </div>

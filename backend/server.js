@@ -10,6 +10,7 @@ const { getSignedUrl } = require("@aws-sdk/s3-request-presigner");
 // Import routes to here
 const userRoutes = require("./routes/userManageRoutes");
 const storeRoutes = require("./routes/storeRoutes");
+const seasonalRoutes = require("./routes/seasonalRoutes");
 
 
 const app = express();
@@ -96,6 +97,7 @@ app.get("/presigned-url", async (req, res) => {
 // Implement the routes from here
 app.use("/api/users", userRoutes);
 app.use("/api/store", storeRoutes);
+app.use("/api/seasonal", seasonalRoutes);
 
 
 app.listen(PORT, () => {

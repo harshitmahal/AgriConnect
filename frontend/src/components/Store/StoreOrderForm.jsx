@@ -308,14 +308,14 @@ const StoreOrderForm = () => {
               Place Order
             </button>
 
-            <button
+            {/* <button
               type="button"
               onClick={demo}
               class="btn store-order-form-button my-4"
               id="product-details-buy-now"
             >
               Demo
-            </button>
+            </button> */}
           </div>
         </form>
       </div>

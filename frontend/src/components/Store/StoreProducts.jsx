@@ -37,10 +37,9 @@ const StoreProducts = () => {
   return (
     <div className="store-container min-vh-100">
       <div className="latest-store-details-cover position-relative">
-        <img src="https://i.ibb.co/rkfrhCm/banner18.webp" alt="" />
+        <img src="https://i.ibb.co/rkfrhCm/banner18.webp" className="w-100" alt="" />
         <div className="store-products-top text-secondary position-absolute top-50 start-50 translate-middle">
           <p>
-            Home > Products >
             {params.category.replace(/\w\S*/g, function (txt) {
               return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
             })}
