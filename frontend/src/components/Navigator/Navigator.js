@@ -13,7 +13,7 @@ const Navigator = () => {
   const addUserInfo = () => {
     const user = JSON.parse(sessionStorage.getItem("loginData"));
     setUser(user?.full_name);
-    
+
   }
 
   const signOut = () => {
@@ -32,7 +32,41 @@ const Navigator = () => {
             <span className="icon-close2 js-menu-toggle"></span>
           </div>
         </div>
-        <div className="site-mobile-menu-body"></div>
+        <div className="site-mobile-menu-body">
+          <ul className="site-menu js-clone-nav mr-auto ">
+            <li>
+              <Link to="/">
+                <span>Home</span>
+              </Link>
+            </li>
+            <li>
+              <Link to="/store">
+                <span>Store</span>
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/about">
+                <span>About</span>
+              </Link>
+            </li>
+            <li>
+              <Link to="/contact">
+                <span>Contact Us</span>
+              </Link>
+            </li>
+            {user && user !== "" && user !== null &&
+              <>
+                <li> <i>Welcome {user?.split(" ")?.[0]}
+                </i></li>
+
+                <li onClick={signOut}>
+                  <a >
+                    <span>Sign Out</span>
+                  </a>
+                </li></>}
+          </ul>
+        </div>
       </div>
 
       <header className="site-navbar" role="banner">

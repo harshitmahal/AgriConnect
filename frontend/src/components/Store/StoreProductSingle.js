@@ -8,7 +8,7 @@ const StoreProductSingle = ({ img, title, price, id }) => {
 
   const deleteProduct = async () => {
     const { status } = await axios.delete(
-      `http://localhost:8000/api/store/products/${id}`
+      `https://4kdjc9fyz8.execute-api.us-east-1.amazonaws.com/prod/api/store/products/${id}`
     );
 
     alert("Product Deleted Successfully");

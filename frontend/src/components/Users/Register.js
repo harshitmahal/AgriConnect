@@ -31,7 +31,7 @@ const Register = () => {
 
     if (re.test(user.email)) {
       const { res, status } = await axios.post(
-        "http://localhost:8000/api/users/sign-up",
+        "https://4kdjc9fyz8.execute-api.us-east-1.amazonaws.com/prod/api/users/sign-up",
         user
       );
 

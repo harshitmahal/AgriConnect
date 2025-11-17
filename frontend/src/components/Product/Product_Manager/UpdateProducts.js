@@ -28,7 +28,7 @@ useEffect(() => {
 
 const onUpdate = (e) => {
   e.preventDefault()
-  axios.put(`http://localhost:8000/api/wholesale/update/${Pid}`, {
+  axios.put(`https://4kdjc9fyz8.execute-api.us-east-1.amazonaws.com/prod/api/wholesale/update/${Pid}`, {
       'Quentity': Pquantity,
     })
     .then((response) => {

@@ -38,7 +38,9 @@ const StoreAddProductForm = () => {
     }
 
     axios
-      .post("http://localhost:8000/api/store/products", product)
+      .post("https://4kdjc9fyz8.execute-api.us-east-1.amazonaws.com/prod/api/store/products", product, {
+        headers: { "Content-Type": "application/json" }
+      })
       .then((response) => {
         swal({
           title: "Product Added Successfully!",

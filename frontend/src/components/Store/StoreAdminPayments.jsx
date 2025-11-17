@@ -9,7 +9,7 @@ const StoreAdminPayments = () => {
   const [payments, setPayments] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:8000/api/store/payments`).then((res) => {
+    axios.get(`https://4kdjc9fyz8.execute-api.us-east-1.amazonaws.com/prod/api/store/payments`).then((res) => {
       setPayments(res.data.payments);
     });
   }, []);

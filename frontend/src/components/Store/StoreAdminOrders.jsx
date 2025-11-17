@@ -9,7 +9,7 @@ const StoreAdminOrders = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:8000/api/store/orders`).then((res) => {
+    axios.get(`https://4kdjc9fyz8.execute-api.us-east-1.amazonaws.com/prod/api/store/orders`).then((res) => {
       setOrders(res.data.orders);
     });
   }, []);

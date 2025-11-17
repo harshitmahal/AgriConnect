@@ -10,7 +10,7 @@ const StoreProducts = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/store/products/${params.category}`)
+      .get(`https://4kdjc9fyz8.execute-api.us-east-1.amazonaws.com/prod/api/store/products/${params.category}`)
       .then((res) => {
         setProducts(res.data.products);
       });
@@ -21,7 +21,7 @@ const StoreProducts = () => {
 
     if (pName === "") {
       axios
-        .get(`http://localhost:8000/api/store/products/${params.category}`)
+        .get(`https://4kdjc9fyz8.execute-api.us-east-1.amazonaws.com/prod/api/store/products/${params.category}`)
         .then((res) => {
           setProducts(res.data.products);
         });
@@ -36,23 +36,105 @@ const StoreProducts = () => {
 
   return (
     <div className="store-container min-vh-100">
-      <div className="latest-store-details-cover position-relative">
-        <img src="https://i.ibb.co/rkfrhCm/banner18.webp" className="w-100" alt="" />
-        <div className="store-products-top text-secondary position-absolute top-50 start-50 translate-middle">
-          <p>
-            {params.category.replace(/\w\S*/g, function (txt) {
-              return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-            })}
-          </p>
+      <div
+        id="carouselExampleCaptions"
+        class="carousel slide store-carousel"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
         </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="https://i.ibb.co/277NHWS/Cover1.jpg"
+              class="d-block w-100"
+              alt="..."
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5></h5>
+              <p>
+
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://i.ibb.co/2cdLp79/Untitled-1.jpg"
+              class="d-block w-100"
+              alt="..."
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>l</h5>
+              <p>
+
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://i.ibb.co/T1Qwh9K/fresh-stole.jpg"
+              class="d-block w-100"
+              alt="..."
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5></h5>
+              <p>
+
+              </p>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
 
-      <div className="store-search-bar45645461212 col-5 px-5">
+
+      <div className="mt-4 store-search-bar45645461212 col-5 px-5">
         <input
           type="text"
           class="form-control mb-2 mr-sm-2"
           id="inlineFormInputName2"
-          placeholder="Search for a product"
+          placeholder=
+          {params.category.replace(/\w\S*/g, function (txt) {
+            return `Search for your favorite ${txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()}`;
+          })}
+
           onChange={onSearch}
         />
       </div>

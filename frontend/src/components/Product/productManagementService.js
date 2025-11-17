@@ -2,7 +2,7 @@ import axios from 'axios'
 
 
 //Get All Product  
-const HOST = "http://localhost:8000/api"
+const HOST = "https://4kdjc9fyz8.execute-api.us-east-1.amazonaws.com/prod/api"
 
 export const getAllProducts = async () =>{
     try{

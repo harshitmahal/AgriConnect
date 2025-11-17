@@ -1,6 +1,7 @@
 import React from "react";
 import emailjs from "emailjs-com";
 import "./ContactUs.css";
+import swal from "sweetalert";
 import Navigator from "../Navigator/Navigator";
 
 function ContactUs() {
@@ -9,14 +10,20 @@ function ContactUs() {
 
     emailjs
       .sendForm(
-        "YOUR_SERVICE_ID",   // 🔹 replace with your EmailJS service ID
-        "YOUR_TEMPLATE_ID",  // 🔹 replace with your template ID
+        "service_blwihvu",   // 🔹 replace with your EmailJS service ID
+        "template_ucqzhic",  // 🔹 replace with your template ID
         e.target,
-        "YOUR_PUBLIC_KEY"    // 🔹 replace with your public key
+        "PgaHmhlH2BT2RsgtQ"    // 🔹 replace with your public key
       )
       .then(
         (result) => {
-          alert("✅ Message Sent Successfully!");
+          swal({
+            title: "✅ Message Sent Successfully!",
+            icon: "success",
+            confirmButtonText: "OK",
+            confirmButtonColor: "#12af39",
+            className: "store-swal-button",
+          })
         },
         (error) => {
           alert("❌ Failed to send message, please try again.");
@@ -64,7 +71,7 @@ function ContactUs() {
           <div className="contact-info">
             <p>
               Or reach us directly at{" "}
-              <a href="mailto:support@agriconnect.com">
+              <a>
                 support@agriconnect.com
               </a>
             </p>
