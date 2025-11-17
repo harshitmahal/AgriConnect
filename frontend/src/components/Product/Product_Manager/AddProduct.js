@@ -28,7 +28,7 @@ function sendData(e){
       
     }).then(respuesta=>{
        if(respuesta){
-        axios.post("http://localhost:8000/api/wholesale/add",newProduct).then(()=>{
+        axios.post("https://4kdjc9fyz8.execute-api.us-east-1.amazonaws.com/prod/api/wholesale/add",newProduct).then(()=>{
           swal({text:"Product Added",
                 icon:"success"
                 });
@@ -57,7 +57,7 @@ function sendData(e){
     /*if( PId=="" || PName=="" || Quentity==""){
             alert("Please fill the required fields")
     }else{
-      axios.post("http://localhost:8000/api/wholesale/add",newProduct).then(()=>{
+      axios.post("https://4kdjc9fyz8.execute-api.us-east-1.amazonaws.com/prod/api/wholesale/add",newProduct).then(()=>{
         alert("Product Added");
   
        

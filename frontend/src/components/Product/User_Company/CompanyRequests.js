@@ -45,7 +45,7 @@ function sendcompanyData(e){
           else if(Company_contactNo.length<=9){
             alert("Please Enter valied phone number") 
           }else{
-          axios.post("http://localhost:8000/api/companyRequest/add",newProduct).then(()=>{
+          axios.post("https://4kdjc9fyz8.execute-api.us-east-1.amazonaws.com/prod/api/companyRequest/add",newProduct).then(()=>{
             swal({text:"Company  Added",
                       icon:"success"
                       });
@@ -69,7 +69,7 @@ function sendcompanyData(e){
     }
     
 }/* else{
-    axios.post("http://localhost:8000/api/companyRequest/add",newProduct).then(()=>{
+    axios.post("https://4kdjc9fyz8.execute-api.us-east-1.amazonaws.com/prod/api/companyRequest/add",newProduct).then(()=>{
       swal({text:"Company  Added",
                 icon:"success"
                 });

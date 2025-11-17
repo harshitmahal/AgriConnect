@@ -44,7 +44,7 @@ const StoreOrderForm = () => {
     });
 
     axios
-      .get(`http://localhost:8000/api/store/product/${paramsProduct}`)
+      .get(`https://4kdjc9fyz8.execute-api.us-east-1.amazonaws.com/prod/api/store/product/${paramsProduct}`)
       .then((res) => {
         setProduct(res.data.product);
       });
@@ -52,7 +52,7 @@ const StoreOrderForm = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/users/current`, { withCredentials: true })
+      .get(`https://4kdjc9fyz8.execute-api.us-east-1.amazonaws.com/prod/api/users/current`)
       .then((res) => {
         setUser(res.data);
 
@@ -133,7 +133,7 @@ const StoreOrderForm = () => {
 
     e.preventDefault();
     axios
-      .post("http://localhost:8000/api/store/orders", order)
+      .post("https://4kdjc9fyz8.execute-api.us-east-1.amazonaws.com/prod/api/store/orders", order)
       .then((res) => {
         swal({
           title:

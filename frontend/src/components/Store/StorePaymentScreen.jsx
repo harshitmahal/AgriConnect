@@ -12,12 +12,12 @@ const StorePaymentScreen = () => {
 
   useState(() => {
     axios
-      .get(`http://localhost:8000/api/store/order/${orderId}`)
+      .get(`https://4kdjc9fyz8.execute-api.us-east-1.amazonaws.com/prod/api/store/order/${orderId}`)
       .then((res) => {
         setOrder(res.data.order);
         axios
           .get(
-            `http://localhost:8000/api/store/product/${res.data.order.product}`
+            `https://4kdjc9fyz8.execute-api.us-east-1.amazonaws.com/prod/api/store/product/${res.data.order.product}`
           )
           .then((res) => {
             setProduct(res.data.product);
@@ -57,7 +57,7 @@ const StorePaymentScreen = () => {
     };
 
     axios
-      .post(`http://localhost:8000/api/store/payment`, payment)
+      .post(`https://4kdjc9fyz8.execute-api.us-east-1.amazonaws.com/prod/api/store/payment`, payment)
       .then((res) => {
         swal({
           title:

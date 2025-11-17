@@ -28,7 +28,7 @@ const StoreAdminProductsEdit = () => {
     };
 
     axios
-      .put(`http://localhost:8000/api/store/products/${pid}`, product)
+      .put(`https://4kdjc9fyz8.execute-api.us-east-1.amazonaws.com/prod/api/store/products/${pid}`, product)
       .then((response) => {
         swal({
           title: "Product Updated Successfully!",
@@ -43,7 +43,7 @@ const StoreAdminProductsEdit = () => {
   };
 
   useEffect(() => {
-    axios.get(`http://localhost:8000/api/store/product/${pid}`).then((res) => {
+    axios.get(`https://4kdjc9fyz8.execute-api.us-east-1.amazonaws.com/prod/api/store/product/${pid}`).then((res) => {
       setName(res.data.product.name);
       setImg(res.data.product.image);
       setPrice(res.data.product.price);

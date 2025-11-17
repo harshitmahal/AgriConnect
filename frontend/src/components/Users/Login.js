@@ -23,8 +23,8 @@ const Login = () => {
     };
 
     await axios
-      .post("http://localhost:8000/api/users/login", user, {
-        withCredentials: true,
+      .post("https://4kdjc9fyz8.execute-api.us-east-1.amazonaws.com/prod/api/login", user, {
+        headers: { "Content-Type": "application/json" }
       })
       .then((res) => {
         sessionStorage.setItem("loginData", JSON.stringify(res?.data));

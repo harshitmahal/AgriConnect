@@ -5,7 +5,7 @@ export const handleFileChange = async (e) => {
 
     // 1. Ask backend for pre-signed URL
     const response = await fetch(
-        `http://localhost:8000/presigned-url?filename=${file.name}&contentType=${file.type}`
+        `https://4kdjc9fyz8.execute-api.us-east-1.amazonaws.com/prod/presigned-url?filename=${file.name}&contentType=${file.type}`
     );
     const { uploadUrl, fileUrl } = await response.json();
 

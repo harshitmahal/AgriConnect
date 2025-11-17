@@ -35,7 +35,7 @@ export default function AllProducts(){
     /*Delete Unwanted Products*/
     
     const onDelete= (id)=>{
-        axios.delete(`http://localhost:8000/api/wholesale/delete/${id}`).then((response)=>{
+        axios.delete(`https://4kdjc9fyz8.execute-api.us-east-1.amazonaws.com/prod/api/wholesale/delete/${id}`).then((response)=>{
           swal ({
               title:"Delete Unwanted Products",
               text:"Do you want to delete?",

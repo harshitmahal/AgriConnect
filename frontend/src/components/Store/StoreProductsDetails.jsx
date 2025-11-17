@@ -11,7 +11,7 @@ const StoreProductsDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/store/product/${params.id}`)
+      .get(`https://4kdjc9fyz8.execute-api.us-east-1.amazonaws.com/prod/api/store/product/${params.id}`)
       .then((res) => {
         setProduct(res.data.product);
       });

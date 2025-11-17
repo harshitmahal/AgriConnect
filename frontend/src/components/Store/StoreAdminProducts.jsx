@@ -12,7 +12,7 @@ const StoreAdminOrders = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:8000/api/store/products`).then((res) => {
+    axios.get(`https://4kdjc9fyz8.execute-api.us-east-1.amazonaws.com/prod/api/store/products`).then((res) => {
       setProducts(res.data.products);
     });
   }, []);
@@ -27,14 +27,14 @@ const StoreAdminOrders = () => {
     }).then((willDelete) => {
       if (willDelete) {
         axios
-          .delete(`http://localhost:8000/api/store/products/${id}`)
+          .delete(`https://4kdjc9fyz8.execute-api.us-east-1.amazonaws.com/prod/api/store/products/${id}`)
           .then(() => {
             swal("Product Deleted Successfully!", {
               icon: "success",
             });
 
             axios
-              .get(`http://localhost:8000/api/store/products`)
+              .get(`https://4kdjc9fyz8.execute-api.us-east-1.amazonaws.com/prod/api/store/products`)
               .then((res) => {
                 setProducts(res.data.products);
               });
