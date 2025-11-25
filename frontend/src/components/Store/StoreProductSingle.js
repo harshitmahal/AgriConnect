@@ -30,16 +30,17 @@ const StoreProductSingle = ({ img, title, price, id }) => {
         <p style={{ fontSize: "24px", color: "#12af39" }}>
           <b>₹{price}</b>
         </p>
-
-        <button
-          onClick={() => {
-            navigate(`/store/products/product/${id}`);
-          }}
-          id="store-store-details-button"
-          className="btn btn-success"
-        >
-          Details
-        </button>
+        {id &&
+          <button
+            onClick={() => {
+              navigate(`/store/products/product/${id}`);
+            }}
+            id="store-store-details-button"
+            className="btn btn-success"
+          >
+            Details
+          </button>
+        }
       </div>
     </div>
   );
