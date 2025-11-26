@@ -51,30 +51,27 @@ const StoreOrderForm = () => {
   }, [paramsProduct, price, quantity]);
 
   useEffect(() => {
-    axios
-      .get(`https://4kdjc9fyz8.execute-api.us-east-1.amazonaws.com/prod/api/users/current`)
-      .then((res) => {
-        setUser(res.data);
-
-        setOrder((order) => {
-          return {
-            ...order,
-            user: res.data._id,
-          };
-        });
-      })
-      .catch((error) => {
-        swal({
-          title:
-            "Sorry, You haven't login to the application, Please login to continue",
-          icon: "warning",
-          confirmButtonText: "OK",
-          confirmButtonColor: "#12af39",
-          className: "store-swal-button",
-        }).then(() => {
-          navigate("/login");
-        });
+    const user = JSON.parse(sessionStorage.getItem("loginData"));
+    if (user) {
+      setUser(user);
+      setOrder((order) => {
+        return {
+          ...order,
+          user: user._id,
+        };
       });
+    }else {
+      swal({
+        title:
+          "Sorry, You haven't login to the application, Please login to continue",
+        icon: "warning",
+        confirmButtonText: "OK",
+        confirmButtonColor: "#12af39",
+        className: "store-swal-button",
+      }).then(() => {
+        navigate("/login");
+      });
+    }
   }, []);
 
   const onFormChange = (e) => {
